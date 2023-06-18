@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Field } from 'formik';
 
-export const InputStyled = styled.input`
+export const FieldStyled = styled(Field)`
   background-color: #e9eaf7;
   width: 650px;
   height: 35px;
@@ -45,3 +46,4 @@ export const ButtonStyled = styled.button`
     background-color: ${({ theme }) => theme.colors.buttonHover};
   }
 `;
+
