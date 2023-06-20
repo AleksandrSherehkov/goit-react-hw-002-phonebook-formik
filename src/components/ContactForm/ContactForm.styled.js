@@ -1,5 +1,14 @@
 import styled from 'styled-components';
-import { Field } from 'formik';
+import { Field, Form } from 'formik';
+
+export const FormStyled = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: ${({ theme }) => theme.space[4]}px;
+`;
 
 export const FieldStyled = styled(Field)`
   background-color: #e9eaf7;
@@ -46,4 +55,3 @@ export const ButtonStyled = styled.button`
     background-color: ${({ theme }) => theme.colors.buttonHover};
   }
 `;
-

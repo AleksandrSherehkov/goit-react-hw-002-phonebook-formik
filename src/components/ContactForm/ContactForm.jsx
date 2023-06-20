@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
 
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { Box } from 'utilities/styles/Box';
 import { Text } from 'utilities/styles/Text';
-import { ButtonStyled, FieldStyled } from 'components/ContactForm/ContactForm.styled';
+import { ButtonStyled, FieldStyled, FormStyled } from 'components/ContactForm/ContactForm.styled';
 import { FormError } from 'components/FormError/FormError';
 import { contactSchema } from 'utilities/validationSchema';
 
 export const ContactForm = ({ createContact }) => {
   const hendleSubmit = (values, { resetForm }) => {
-    console.log(values);
     createContact(values);
     resetForm();
   };
@@ -22,7 +21,7 @@ export const ContactForm = ({ createContact }) => {
 
   return (
     <Formik initialValues={initialValues} validationSchema={contactSchema} onSubmit={hendleSubmit}>
-      <Box mt={4} flexDirection="column" gridGap={4} as={Form} autoComplete="off">
+      <FormStyled autoComplete="off">
         <Box alignItems="flex-start" flexDirection="column" as="label">
           <Text fontSize="m" color="black" as="span">
             Name
@@ -51,7 +50,7 @@ export const ContactForm = ({ createContact }) => {
           <BsFillPersonPlusFill size={20} />
           Add contact
         </ButtonStyled>
-      </Box>
+      </FormStyled>
     </Formik>
   );
 };
